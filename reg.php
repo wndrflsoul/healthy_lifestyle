@@ -14,6 +14,12 @@
 
     </HEAD>
 <body>
+<style>
+        body {
+          background: -webkit-linear-gradient(337deg, #5680e9,#5ab9ea,#c1c8e4);/* Chrome 10-25, Safari 5.1-6 */                          
+          background: linear-gradient(337deg, #5680e9,#5ab9ea,#c1c8e4);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
+        }
+    </style>
     <div class="container mt-4">
         <?php
         if($_COOKIE['user'] == ''):
@@ -24,14 +30,14 @@
                 <h1>Регистрация</h1>
                 <form action="reg_form.php" method="post">
                 <div id="error"></div>>
-                <input type="text" class="form-control" name="login" id="login" placeholder="Введите логин"><br>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Введите имя"><br>
-                <input type="text" class="form-control" name="surname" id="surname" placeholder="Введите фамилию"><br>
-                <input type="text" class="form-control" name="age" id="age" placeholder="Введите возраст"><br>
-                <input type="text" class="form-control" name="telephone" id="telephone" placeholder="Введите номер телефона"><br>
-                <input type="text" class="form-control" name="email" id="email" placeholder="Введите электронную почту пользователя!"><br>
-                <input type="text" class="form-control" name="password" id="password" placeholder="Введите пароль пользователя!"><br>
-                <input type="text" class="form-control" name="repassword" id="repassword" placeholder="Подтвердите пароль!"><br>
+                <input type="text" class="form-control" name="login" id="login" required placeholder="Введите логин"><br>
+                <input type="text" class="form-control" name="name" id="name" required placeholder="Введите имя"><br>
+                <input type="text" class="form-control" name="surname" id="surname" required placeholder="Введите фамилию"><br>
+                <input type="text" class="form-control" name="age" id="age" min="10" max="99" required placeholder="Введите возраст от 10 до 99"><br>
+                <input type="text" class="form-control" name="telephone" id="telephone" pattern="^\+7\s\(\d{3}\)\s\d{3}\-\d{2}\-\d{2}$" required placeholder="Введите номер телефона! Пример: +70000000000"><br>
+                <input type="text" class="form-control" name="email" id="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required placeholder="Введите электронную почту пользователя! Пример: example@example.com"><br>
+                <input type="password" class="form-control" name="password" id="password" minlength="8" required placeholder="Введите пароль пользователя! Не менее 8 символов"><br>
+                <input type="password" class="form-control" name="repassword" id="repassword" minlength="8" required placeholder="Подтвердите пароль!"><br>
                 <button id="buttonsuccess"class="btn btn-success" type="submit">
 
                     Подтвердить

@@ -9,7 +9,7 @@ if (!$mysql) {
 
 // Получение id пользователя из куки
 $user_id = $_COOKIE['user'];
-$req_id = $mysql -> query("SELECT id FROM `users` WHERE `name` = '$user_id'");
+$req_id = $mysql->query("SELECT id FROM `users` WHERE `name` = '$user_id'");
 $result = mysqli_fetch_assoc($req_id);
 
 // SQL запрос для удаления всех записей из таблицы
@@ -20,4 +20,3 @@ $mysql->query($sql);
 
 $mysql->close();
 header('Location: /func/water_tracker.php');
-?> 

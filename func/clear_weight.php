@@ -7,20 +7,16 @@ if (!$mysql) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+// Получение id пользователя из куки
 $user_id = $_COOKIE['user'];
 $req_id = $mysql->query("SELECT id FROM `users` WHERE `name` = '$user_id'");
 $result = mysqli_fetch_assoc($req_id);
 
-// Получение данных из формы
-$date = htmlspecialchars((trim($_POST['date'])));
-$amount = htmlspecialchars((trim($_POST['amount'])));
+// SQL запрос для удаления всех записей из таблицы
+$sql = "DELETE FROM weight_tracker WHERE user_id = $result[id];";
 
-// Вставка данных в БД
+$mysql->query($sql);
 
-$mysql->query("INSERT INTO `water_tracker`(`user_id`, `date`, `amount`) VALUES ($result[id], '$date', '$amount');");
+
 $mysql->close();
-
-header('Location: /func/water_tracker.php');
-
-
-?>
+header('Location: weight_tracker.php');

@@ -13,14 +13,14 @@ $result = mysqli_fetch_assoc($req_id);
 
 // Получение данных из формы
 $date = htmlspecialchars((trim($_POST['date'])));
-$amount = htmlspecialchars((trim($_POST['amount'])));
+$weight = htmlspecialchars((trim($_POST['weight'])));
 
 // Вставка данных в БД
 
-$mysql->query("INSERT INTO `water_tracker`(`user_id`, `date`, `amount`) VALUES ($result[id], '$date', '$amount');");
+$mysql->query("INSERT INTO `weight_tracker`(`user_id`, `date`, `weight`) VALUES ($result[id], '$date', '$weight');");
 $mysql->close();
 
-header('Location: /func/water_tracker.php');
+header('Location: weight_tracker.php');
 
 
 ?>

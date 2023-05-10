@@ -21,7 +21,8 @@
 <body>
 <style>
         body {
-            background-color: #fff3e2;
+          background: -webkit-linear-gradient(337deg, #5680e9,#5ab9ea,#c1c8e4);/* Chrome 10-25, Safari 5.1-6 */                          
+          background: linear-gradient(337deg, #5680e9,#5ab9ea,#c1c8e4);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
         }
     </style>
 
@@ -61,7 +62,7 @@ li a.active {
 <body>
 
 <ul>
-  <li><a class="active" href="#home">Главная</a></li>
+  <li><a class="active" href="/index.php">Главная</a></li>
   <li><a href="#news">Новости</a></li>
   <li><a href="#contact">Контакты</a></li>
   <li><a href="#about">О нас</a></li>
