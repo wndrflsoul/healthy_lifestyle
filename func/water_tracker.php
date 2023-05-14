@@ -11,7 +11,8 @@ if ($_COOKIE['user'] == ''):
 <head>
 
   <title>Вода</title>
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.scss">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -160,7 +161,9 @@ if ($_COOKIE['user'] == ''):
           chart.draw(data, options);
         }
       </script>
-      <div id="chart_div" style="width: 900px; height: 500px;"></div>
+      <style>
+        </style>
+      <div id="chart_div" style="width: 900px; height: 500px; "></div>
     </div>
     </div>
     </div>
