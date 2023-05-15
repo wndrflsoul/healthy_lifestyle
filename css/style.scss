@@ -147,6 +147,13 @@ img {
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
 }
+.arterial_name {
+  color: white;
+  text-shadow: gray 3px 3px 3px;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+}
 *,
 *::before,
 *::after {
@@ -182,7 +189,7 @@ img {
   //color: transparent;
   //background-color: white;
   //background-clip: text;
-  animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
+  animation: shadows 3s ease-in infinite, move 3s ease-in infinite;
   letter-spacing: 0.4rem;
 }
 

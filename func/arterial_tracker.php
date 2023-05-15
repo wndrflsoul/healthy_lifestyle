@@ -10,7 +10,7 @@
 
 <head>
 
-  <title>Трекер веса</title>
+  <title>Трекер артериального давления</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
@@ -74,68 +74,31 @@ li a.active {
   <li><a href="/exit.php">Выйти</a></li>
 </ul>
 <br><br>
+<p class="arterial_name"><b>Отслеживание артериального давления</b></p>
 <div class="container mt-2">
-<form action="weight_tracker_handler.php" method="post">
+<form action="arterial_tracker_handler.php" method="post">
 <div class="card rounded shadow shadow-sm">
         <div class="card-header">
         <div class="col">
         <p class="lead"></p>
-  <label for="date">Дата:</label>
+  <label for="date">Дата измерения:</label>
   <input type="date" name="date" id="date" value="<?php echo date('Y-m-d'); ?>" required><br><br>
 
-  <label for="weight">Вес в кг.:</label>
-  <input type="number" name="weight" id="weight" value="0" required><br><br>
+  <label for="systolic">Систолическое (верхнее):</label>
+  <input type="number" name="systolic" id="systolic" value="0" required><br><br>
+
+  <label for="diastolic">Диастолическое (нижнее):</label>
+  <input type="number" name="diastolic" id="diastolic" value="0" required><br><br>
 
   <input type="submit" value="Подтвердить">
-  <button type="button" onclick="if(confirm('Вы уверены, что хотите очистить данные?')){window.location.href='clear_weight.php'}">Очистить все данные о весе</button>
+  <button type="button" onclick="if(confirm('Вы уверены, что хотите очистить данные?')){window.location.href='clear_arterial.php'}">Очистить все данные о давлении</button>
 </form>
-<?php
-// Устанавливаем соединение с базой данных
-$conn = mysqli_connect("localhost", "root", "root", "healtylifestyle");
+<form action="arterial_tracker_show.php" method="post">
+                <button id="buttonsuccess" class="btn btn-success" type="submit">
 
-      // Получение id пользователя из куки
-      $user_id = $_COOKIE['user'];
-      $req_id = $conn->query("SELECT id FROM `users` WHERE `name` = '$user_id'");
-      $result = mysqli_fetch_assoc($req_id);
+                    Посмотреть данные
 
-
-// Получаем данные о весе пользователя из базы данных
-$sql = "SELECT date, weight FROM weight_tracker WHERE user_id = $result[id] ORDER BY date ASC;";
-$result_w = mysqli_query($conn, $sql);
-
-// Формируем массив данных для графика
-$data = array();
-while ($row = mysqli_fetch_assoc($result_w)) {
-  $data[$row['date']] = $row['weight'];
-}
-
-// Закрываем соединение с базой данных
-mysqli_close($conn);
-?>
-<canvas id="myChart"></canvas>
-<script>
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: <?= json_encode(array_keys($data)) ?>,
-      datasets: [{
-        label: 'Вес',
-        data: <?= json_encode(array_values($data)) ?>,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        fill: true
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-  </script>
+                </button>
 
 </div>
 </div>

@@ -164,10 +164,10 @@ if ($_COOKIE['user'] == ''):
           <div class="shadow-lg p-2 mb-6 bg-white rounded">
             <p class="lead" style="font-size: 30px;" align="center">Трекеры в случае заболевания</p>
           </div><br>
-          <form action="weight_tracker.php" target="_blank">
+          <form action="arterial_tracker.php" target="_blank">
             <button class="btn"><span>Трекер артериального давления</span></button><br>
           </form>
-          <form action="weight_tracker.php" target="_blank">
+          <form action="temp_tracker.php" target="_blank">
             <button class="btn"><span>Трекер температуры тела</span></button><br>
           </form>
 

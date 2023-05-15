@@ -67,14 +67,15 @@ if ($_COOKIE['user'] == ''):
 
   <body>
 
-    <ul>
-      <li><a class="active" href="/index.php">Главная</a></li>
-      <li><a href="#news">Новости</a></li>
-      <li><a href="#contact">Контакты</a></li>
-      <li><a href="#about">О нас</a></li>
-      <li><a href="#about">Профиль</a></li>
-      <li><a href="/exit.php">Выйти</a></li>
-    </ul>
+  <ul>
+  <li><a href="/index.php">Главная</a></li>
+  <li><a class="active" href="/func/physical_index.php">Показатели</a></li>
+  <li><a href="/func/page_trackers.php">Трекеры</a></li>
+  <li><a href="/func/forum.php">Форум</a></li>
+  <li><a href="/func/pharma.php">Лекарства</a></li>
+  <li><a href="/func/nutrition.php">Питание</a></li>
+  <li><a href="exit.php">Выход</a></li>
+</ul>
     <br><br>
     <div class="container mt-2">
       <form action="physical_index_handler.php" method="post">
