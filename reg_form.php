@@ -9,8 +9,8 @@
     $email = htmlspecialchars((trim($_POST['email'])));
     $password = htmlspecialchars((trim($_POST['password'])));
 
-    $mysql = new mysqli('localhost', 'root', 'root', 'healtylifestyle');    
-    $sql = "SELECT * FROM users WHERE name='$name' OR telephone='$telephone' OR email = '$email'";
+    $mysql = new mysqli('localhost', 'a0817883_healtylifestyle', 'kbpytwb78', 'a0817883_healtylifestyle');    
+    $sql = "SELECT * FROM `users` WHERE `login`='$login' OR `telephone`='$telephone' OR `email` = '$email';";
     $result = mysqli_query($mysql, $sql);
 
     if (mysqli_num_rows($result)>0) {

@@ -2,7 +2,7 @@
 
 $email = htmlspecialchars((trim($_POST['email'])));
 $password = htmlspecialchars((trim($_POST['password'])));
-$mysql = new mysqli('localhost', 'root', 'root', 'healtylifestyle');   
+$mysql = new mysqli('localhost', 'a0817883_healtylifestyle', 'kbpytwb78', 'a0817883_healtylifestyle'); 
 
 // Выполнение запроса MySql
 

@@ -91,7 +91,7 @@ li a.active {
 </form>
 <?php
 // Устанавливаем соединение с базой данных
-$conn = mysqli_connect("localhost", "root", "root", "healtylifestyle");
+$conn = new mysqli('localhost', 'a0817883_healtylifestyle', 'kbpytwb78', 'a0817883_healtylifestyle');
 
       // Получение id пользователя из куки
       $user_id = $_COOKIE['user'];

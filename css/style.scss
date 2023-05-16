@@ -184,13 +184,18 @@ img {
   text-transform: uppercase;
   font-size: calc(10rem + 8vw);
   text-align: center;
-  margin: 0;
+  margin: auto 0;
   color: var(--color-primary);
   //color: transparent;
   //background-color: white;
   //background-clip: text;
   animation: shadows 3s ease-in infinite, move 3s ease-in infinite;
   letter-spacing: 0.4rem;
+}
+@media only screen and (max-width: 480px) {
+  .text_shadows {
+      font-size: 450%; /* Уменьшенный размер шрифта */
+  }
 }
 
 @keyframes shadows {

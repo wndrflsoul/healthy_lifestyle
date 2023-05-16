@@ -1,6 +1,6 @@
 <?php
 // Подключение к БД
-$mysql = new mysqli('localhost', 'root', 'root', 'healtylifestyle');
+$mysql = new mysqli('localhost', 'a0817883_healtylifestyle', 'kbpytwb78', 'a0817883_healtylifestyle');
 
 // Проверка подключения к БД
 if (!$mysql) {

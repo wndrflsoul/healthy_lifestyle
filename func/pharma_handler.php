@@ -1,7 +1,7 @@
 <?php
 
 
-$mysql = new mysqli('localhost', 'root', 'root', 'healtylifestyle');
+$mysql = new mysqli('localhost', 'a0817883_healtylifestyle', 'kbpytwb78', 'a0817883_healtylifestyle');
 
 $user_id = $_COOKIE['user'];
 $req_id = $mysql -> query("SELECT id FROM `users` WHERE `name` = '$user_id'");

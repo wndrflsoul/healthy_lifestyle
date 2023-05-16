@@ -1,8 +1,8 @@
 <?php
 // подключение к БД
-$dsn = "mysql:host=localhost;dbname=healtylifestyle";
-$username = "root";
-$password = "root";
+$dsn = "mysql:host=localhost;dbname=a0817883_healtylifestyle";
+$username = "a0817883_healtylifestyle";
+$password = "kbpytwb78";
 $options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 );
