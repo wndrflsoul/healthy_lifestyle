@@ -297,6 +297,11 @@ img {
   display: block;
   margin: 0 auto;
 }
+@media only screen and (max-width: 480px) {
+  .button-74 {
+    line-height: 35px;
+  }
+}
 
 .button-74:hover {
   background-color: #fff;
