@@ -57,14 +57,15 @@ if ($_COOKIE['user'] == ''):
 
     <body>
 
-        <ul>
-            <li><a class="active" href="#home">Главная</a></li>
-            <li><a href="#news">Новости</a></li>
-            <li><a href="#contact">Контакты</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#about">Профиль</a></li>
-            <li><a href="/exit.php">Выйти</a></li>
-        </ul>
+    <ul>
+  <li><a href="/index.php">Главная</a></li>
+  <li><a href="/func/physical_index.php">Показатели</a></li>
+  <li><a class="active" href="/func/page_trackers.php">Трекеры</a></li>
+  <li><a href="/func/forum.php">Форум</a></li>
+  <li><a href="/func/pharma.php">Лекарства</a></li>
+  <li><a href="/func/nutrition.php">Питание</a></li>
+  <li><a href="/exit.php">Выход</a></li>
+</ul>
         <br><br>
         <hr>
         <?php
@@ -77,6 +78,12 @@ $result = mysqli_fetch_assoc($req_id);
 
 // Выполняем запрос к базе данных для получения даты
 $stmt = $mysql->query("SELECT quit_date FROM alcohol_tracker WHERE user_id = $result[id];");
+
+// Выполняем запрос к базе данных для получения алкоголя в день
+$stmtAlco = $mysql->query("SELECT alco_per_day FROM alcohol_tracker WHERE user_id = $result[id];");
+
+// Выполняем запрос к базе данных для получения цены за упаковку
+$stmtCost = $mysql->query("SELECT cost_per_pack FROM alcohol_tracker WHERE user_id = $result[id];");
 
 // Извлечение даты из результата запроса
 $row = mysqli_fetch_assoc($stmt);
@@ -91,6 +98,19 @@ $datetimeNow = new DateTime();
 // Вычисляем разницу между двумя датами в днях
 $interval = $datetimeFromDB->diff($datetimeNow);
 $days = $interval->days;
+
+
+// Извлечение кол-ва сигарет из результата запроса
+$rowAlco = mysqli_fetch_assoc($stmtAlco);
+$notAlco = $rowAlco['alco_per_day'];
+
+$notAlcohol = $days * $notAlco;
+
+// Извлечение цены из результата запроса
+$rowCost = mysqli_fetch_assoc($stmtCost);
+$freeCost = $rowCost['cost_per_pack'];
+
+$freeMoney = $notAlcohol * ($freeCost / $notAlco);
 
 
 mysqli_close($mysql);
@@ -110,6 +130,8 @@ mysqli_close($mysql);
           <div class="card-header">
             <div id="line_block" class="text">
             <p class="lead">Дата отказа от алкоголя: <?=$dateFromDB?></p>
+            <p class="lead">Не выпито алкоголя: <?=$notAlcohol?> мл.</p>
+            <p class="lead">Сэкономленные средства: <?=$freeMoney?> рублей.</p>
             </div>
             <div id="circle"></div>
             <style>

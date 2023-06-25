@@ -66,14 +66,15 @@ if ($_COOKIE['user'] == ''):
 
     <body>
 
-        <ul>
-            <li><a class="active" href="/index.php">Главная</a></li>
-            <li><a href="#news">Новости</a></li>
-            <li><a href="#contact">Контакты</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#about">Профиль</a></li>
-            <li><a href="/exit.php">Выйти</a></li>
-        </ul>
+    <ul>
+  <li><a href="/index.php">Главная</a></li>
+  <li><a href="/func/physical_index.php">Показатели</a></li>
+  <li><a class="active" href="/func/page_trackers.php">Трекеры</a></li>
+  <li><a href="/func/forum.php">Форум</a></li>
+  <li><a href="/func/pharma.php">Лекарства</a></li>
+  <li><a href="/func/nutrition.php">Питание</a></li>
+  <li><a href="/exit.php">Выход</a></li>
+</ul>
         <br><br>
         <div class="container mt-2">
             <p class="alcohol_name"><b>Отслеживание отказа от алкоголя</b></p>
@@ -89,7 +90,7 @@ if ($_COOKIE['user'] == ''):
                             <label for="alco_per_day">Миллилитров алкоголя в день:</label>
                             <input type="number" name="alco_per_day" id="alco_per_day" value="0" required><br><br>
 
-                            <label for="cost_per_pack">Цена за бутылку:</label>
+                            <label for="cost_per_pack">Цена за единицу:</label>
                             <input type="number" name="cost_per_pack" id="cost_per_pack" value="0" required><br><br>
 
                             <input type="submit" value="Подтвердить">

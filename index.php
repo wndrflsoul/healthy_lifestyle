@@ -80,7 +80,7 @@
     }
     @media only screen and (max-width: 480px) {
   p.title_1 {
-      font-size: 15px; /* Уменьшенный размер шрифта */
+      font-size: 13px; /* Уменьшенный размер шрифта */
   }
 }
   </style>

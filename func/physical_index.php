@@ -74,7 +74,7 @@ if ($_COOKIE['user'] == ''):
   <li><a href="/func/forum.php">Форум</a></li>
   <li><a href="/func/pharma.php">Лекарства</a></li>
   <li><a href="/func/nutrition.php">Питание</a></li>
-  <li><a href="exit.php">Выход</a></li>
+  <li><a href="/exit.php">Выход</a></li>
 </ul>
     <br><br>
     <div class="container mt-2">

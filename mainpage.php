@@ -193,11 +193,15 @@ li a.active {
   <form action="func/page_trackers.php" target="_blank">
   <button class="btn"><span>Персональные трекеры</span></button><br>
   </form>
+  <form action="func/forum.php" target="_blank">
   <button class="btn"><span>Форум</span></button><br>
+  </form>
   <form action="func/pharma.php" target="_blank">
   <button class="btn"><span>Отслеживание лекарств</span></button><br>
   </form>
+  <form action="func/nutrition.php" target="_blank">
   <button class="btn"><span>Советы по питанию</span></button><br>
+  </form>
 </div>
 
 </div>

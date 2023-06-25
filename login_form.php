@@ -16,7 +16,7 @@ if (mysqli_num_rows($result) == 0) {
 
 // Регистрация куки текущего пользователя
 
-setcookie('user', $user['name'], time() + 3600, "/");
+setcookie('user', $user['name'], time() + 2592000, "/");
 
 $mysql -> close();
 header('Location: /mainpage.php');

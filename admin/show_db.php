@@ -27,11 +27,12 @@
 </head>
 <body>
     <p>Привет <?=$_COOKIE ['user']?>!</p>
-    <table id="table" class="table table-bordered"><caption>Таблица пользователей</caption>
+    <caption>Таблица пользователей: Идентификатор, логин, имя, фамилия, возраст, номер телефона, эл. почта, пароль, роль</caption><table id="table" class="table table-bordered">
 
 </table>
 <br>
-<table id="table1" class="table table-bordered"><caption>Таблица физ. показателей</caption>
+<caption>Таблица физ. показателей: Идентификатор, Идентификатор пользователей, рост, вес</caption>
+<table id="table1" class="table table-bordered">
 
 </table>
     <form action="exit_admin.php" target="_blank">

@@ -10,7 +10,7 @@
 
 <head>
 
-  <title>Трекер температуры тела</title>
+  <title>Новая тема</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
@@ -68,40 +68,25 @@ li a.active {
 <ul>
   <li><a href="/index.php">Главная</a></li>
   <li><a href="/func/physical_index.php">Показатели</a></li>
-  <li><a class="active" href="/func/page_trackers.php">Трекеры</a></li>
-  <li><a href="/func/forum.php">Форум</a></li>
+  <li><a href="/func/page_trackers.php">Трекеры</a></li>
+  <li><a class="active" href="/func/forum.php">Форум</a></li>
   <li><a href="/func/pharma.php">Лекарства</a></li>
   <li><a href="/func/nutrition.php">Питание</a></li>
   <li><a href="/exit.php">Выход</a></li>
 </ul>
 <br><br>
-<p class="arterial_name"><b>Отслеживание температуры тела</b></p>
 <div class="container mt-2">
-<form action="temp_tracker_handler.php" method="post">
 <div class="card rounded shadow shadow-sm">
-        <div class="card-header">
-        <div class="col">
-        <p class="lead"></p>
-  <label for="date">Дата измерения:</label>
-  <input type="date" name="date" id="date" value="<?php echo date('Y-m-d'); ?>" required><br><br>
+<h1>Создание новой темы</h1>
+    <form method="POST" action="create_topic_handler.php">
+        <label for="title">Заголовок:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
 
-  <label for="temp">Температура:</label>
-  <input type="number" step="any" name="temp" min="34" max="43" id="temp" value="0" required><br><br>
+        <label for="description">Описание:</label><br>
+        <textarea id="description" name="description" required></textarea><br><br>
 
-  <input type="submit" value="Подтвердить">
-  <button type="button" onclick="if(confirm('Вы уверены, что хотите очистить данные?')){window.location.href='clear_temp.php'}">Очистить все данные о температуре</button>
-</form>
-<form action="temp_tracker_show.php" method="post">
-                <button id="buttonsuccess" class="btn btn-success" type="submit">
+        <input type="submit" value="Создать тему">
+    </form>
 
-                    Посмотреть данные
-
-                </button>
-
-</div>
-</div>
-</div>
-<hr>
 </body>
-
 </html>
